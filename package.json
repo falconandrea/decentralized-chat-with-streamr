@@ -12,12 +12,14 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
+    "ethers": "^5.7.2",
     "next": "13.4.7",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "streamr-client": "^8.5.4",
     "streamr-client-react": "^3.0.0-hkt.1",
-    "tailwindcss": "3.3.2"
+    "tailwindcss": "3.3.2",
+    "web3modal": "^1.9.12"
   }
 }
