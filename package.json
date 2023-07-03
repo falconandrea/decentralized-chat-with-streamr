@@ -18,7 +18,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "streamr-client": "^8.5.4",
-    "streamr-client-react": "^3.0.0-hkt.1",
     "tailwindcss": "3.3.2",
     "web3modal": "^1.9.12"
   }
