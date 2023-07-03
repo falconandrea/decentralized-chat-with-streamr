@@ -1,4 +1,4 @@
-import { getClientAndAddress } from "@/pages/utils/streamr"
+import { getClientAndAddress } from "@/utils/streamr"
 import { useEffect, useState } from "react"
 
 const STREAM_ID = process.env.NEXT_PUBLIC_STREAM_ID

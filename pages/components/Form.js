@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { publishMessage } from '@/pages/utils/streamr'
+import { publishMessage } from '@/utils/streamr'
 
 export default function Form({setErrorMessage, setSuccessMessage, setLoading}) {
   const [message, setMessage] = useState('')
