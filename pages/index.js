@@ -1,7 +1,10 @@
 import { Contract, providers, utils } from "ethers";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
-import Web3Modal from "web3modal";
+import Web3Modal from "web3modal"
+
+import Form from '@/pages/components/Form'
+import Messages from '@/pages/components/Messages'
 
 const NETWORK_NAME = "Polygon"
 const NETWORK_ID = 137
@@ -18,6 +21,8 @@ export default function Home() {
   const [errorMessage, setErrorMessage] = useState('')
   const [successMessage, setSuccessMessage] = useState('')
 
+  const [currentAddress, setCurrentAddress] = useState('')
+
   /*
     connectWallet: Connects the MetaMask wallet
   */
@@ -25,8 +30,9 @@ export default function Home() {
     try {
       // Get the provider from web3Modal, which in our case is MetaMask
       // When used for the first time, it prompts the user to connect their wallet
-      await getProviderOrSigner();
-      setWalletConnected(true);
+      await getProviderOrSigner()
+      setWalletConnected(true)
+      setCurrentAddress(`${window.ethereum.selectedAddress.slice(0,3)}...${window.ethereum.selectedAddress.slice(-5)}`)
     } catch (err) {
       console.error(err);
     }
@@ -79,14 +85,14 @@ export default function Home() {
   const renderMessages = () => {
     if(successMessage) {
       return (
-        <p className={styles.successMessage}>
+        <p className="text-center text-green-400 mt-8">
           {successMessage}
         </p>
       )
     }
     if(errorMessage) {
       return (
-        <p className={styles.errorMessage}>
+        <p className="text-center text-red-400 mt-8">
           {errorMessage}
         </p>
       )
@@ -103,14 +109,18 @@ export default function Home() {
       <div>
         <div className="w-full max-w-xs m-auto">
           { walletConnected ? (
-            <p>Wallet connected</p>
+            <div>
+              <p className="text-right mb-8 mt-4">Welcome {currentAddress}</p>
+              <Messages />
+              <Form setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} setLoading={setLoading} />
+            </div>
           ) : (
             <p className="text-center mt-8 text-red-500">Connect your wallet</p>
           )}
         </div>
         { loading ? (
-          <div className={styles.loading}>
-            <p>Loading...</p>
+          <div className="fixed top-0 left-0 w-full h-full z-10 bg-gray-400 opacity-90">
+            <p className="text-center pt-32 text-white text-lg">Loading...</p>
           </div>
         ) : ''}
         {renderMessages()}
