@@ -31,3 +31,9 @@ After that, you have to install the packages with `npm install`.
 Finally, launch the command `node setup.js`.
 
 The command returns your `stream ID` to use inside the frontend.
+
+### For the frontend
+
+Copy `.env.example` to `.env` file and update the `NEXT_PUBLIC_STREAM_ID` variable value.
+
+Install packages with `npm install` and run local dev `npm run dev`.
