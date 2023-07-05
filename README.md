@@ -1,8 +1,12 @@
+<a href="https://trackgit.com">
+<img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/ljptl4dy8v9972mcs3ml" alt="trackgit-views" />
+</a>
+
 # Chat with Streamr
 
 LearnWeb3 Bounty: UX/DX Test Streamr documentation
 
-## The challange
+## The challenge
 
 ### Objective:
 
