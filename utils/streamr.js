@@ -30,6 +30,8 @@ const checkSetPermissions = async (type) => {
     allowPublic: true
   })
 
+  console.log('permissionStatus', type, permissionStatus)
+
   // Set if missing
   if(!permissionStatus) {
     await stream.grantPermissions({
@@ -41,6 +43,8 @@ const checkSetPermissions = async (type) => {
 
 const publishMessage = async (message) => {
   const { stream, address } = await getClientAndAddress()
+
+  console.log(stream, address)
 
   // Check and set permissions
   await checkSetPermissions('publish')
